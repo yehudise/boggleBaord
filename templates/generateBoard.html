@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Boggle Board Generator</title>
+  </head>
+  <body>
+    <h1>Boggle Board Generator</h1>
+    <form action="/boggle_board" method="POST">
+      <button type="submit" id="generateBoardBtn">
+        Generate Boggle Board
+      </button>
+    </form>
+    <div id="boardContainer">
+      {% if board %}
+      <table>
+        {% for row in board %}
+        <tr>
+          {% for cell in row %}
+          <td>{{ cell }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+      {% endif %}
+    </div>
+  </body>
+</html>
